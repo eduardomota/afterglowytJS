@@ -1,0 +1,26 @@
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
+  <script>
+    window.onload = function() {
+      const videoid = document.getElementsByTagName("video")[0].getAttribute("video-id");
+      var completesource = false;
+      if (videoid.length == 11) {
+        const Http = new XMLHttpRequest();
+        const url = 'https://www.example.com/video.php?code=' + videoid;
+        Http.open("GET", url);
+        Http.send();
+        Http.onreadystatechange = function(e) {
+          if (Http.responseText && completesource === false) {
+            sources = document.getElementById("player_html5_api").innerHTML;
+            replsources = sources.replace("%sources", Http.responseText);
+            document.getElementById("player_html5_api").innerHTML = replsources;
+            completesource = true;
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<video id="player" video-id="jNQXAC9IVRw" class="afterglow" poster="path/to/image.jpg" width="1920" height="1080" playsinline controls>%sources</video>
+</html>
