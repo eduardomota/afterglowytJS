@@ -5,7 +5,7 @@ Obtain "raw" links to video resources with yt integration, currently functional 
 
 ## Quick Start
 
-1. Edit `video.php` and add to `$allowed_videos` array the yt videos id (~~https://www.youtube.com/watch?v=~~jNQXAC9IVRw) you want the API to reply to.
+1. Edit `video.php` and add to `$allowed_videos` array the yt videos id (https://www.youtube.com/watch?v=**<u>jNQXAC9IVRw</u>**) you want the API to reply to.
 2. Add afterglow and `video.js` after it and before closing the `</head>` tag.
    1. Edit `url` variable inside `video.js` file to correspond to `video.php` location on your server.
 3. Add your `<video>`tag with custom attributes including:
@@ -21,9 +21,9 @@ Obtain "raw" links to video resources with yt integration, currently functional 
 
 ## What does what
 
-`video.php` - Requests fresh new `<source src="..." type="...">` for your video tag
+`video.php` - Requests fresh new `<source src="..." type="...">` for your video tag, this only uses a single GET parameter `code` that corresponds to video id, the input id should be included in `$allowed_videos` array otherwise the request fails.
 
-`video.js` - Applies freshly obtained sources onto afterglow
+`video.js` - Requests and applies `video.php` freshly obtained sources onto afterglow.
 
 ## Mini QA
 
