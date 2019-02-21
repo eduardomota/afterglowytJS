@@ -1,7 +1,7 @@
 
 
-var completesource = false; // Is souce complete
-const videoidlen = 11; // video ID length
+var completesource = false; // Is source complete
+const videoidlen = 11; // Video ID length
 const videoid = document.getElementsByTagName("video")[0].getAttribute("video-id"); // Get video tag, video-id value
 
 if (videoid.length == videoidlen) {
