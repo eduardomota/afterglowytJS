@@ -2,25 +2,51 @@
 <head>
   <script src="https://cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
   <script>
-    window.onload = function() {
-      const videoid = document.getElementsByTagName("video")[0].getAttribute("video-id");
-      var completesource = false;
-      if (videoid.length == 11) {
-        const Http = new XMLHttpRequest();
-        const url = 'https://www.example.com/video.php?code=' + videoid;
-        Http.open("GET", url);
-        Http.send();
-        Http.onreadystatechange = function(e) {
-          if (Http.responseText && completesource === false) {
-            sources = document.getElementById("player_html5_api").innerHTML;
-            replsources = sources.replace("%sources", Http.responseText);
-            document.getElementById("player_html5_api").innerHTML = replsources;
-            completesource = true;
+    window.onload = function() { // Start after loading page
+
+      /*
+        video.js configuration
+       */
+      var video = {
+        attribute: "video-id",                                  // string,  <video> tag attribute
+        idLength: 11,                                           // integer, Video ID length
+        ids: document.getElementsByTagName("video"),            // array,   Video elements collection
+        proxy: "http://www.example.com/api/video.php?code=",    // string,  Video source proxy site
+        reqType: "GET"                                          // string,  Request type
+      }
+
+      /*
+        Request raw sources from proxy and set them
+        element - integer , element index number
+        id      - string  , video-id value to be requested from server
+       */
+      function setSource(element, id) {
+        var sourceComplete = false;
+        if (id.length === video.idLength) {
+          const http = new XMLHttpRequest();  // Create a new request
+          const url = video.proxy + id;       // Add video ID to url
+          http.open(video.reqType, url);      // Open request type with url
+          http.send();
+          http.onreadystatechange = function() {  // On request state change
+            if (http.responseText && sourceComplete === false) {
+              sources = http.responseText;              // Set video source reply
+              video.ids[element].innerHTML = sources;   // Update <video> with new source
+              sourceComplete = true;
+            }
           }
         }
+      }
+
+      /*
+        Go through every video tag and trigger source update
+       */
+      for (var vid = 0; vid < video.ids.length; vid++) {
+        id = video.ids[vid].getAttribute(video.attribute);  // Get video ID via video-id attribute value
+        setSource(vid, id);                                 // Set fresh sources
       }
     }
   </script>
 </head>
-<video id="player" video-id="jNQXAC9IVRw" class="afterglow" poster="path/to/image.jpg" width="1920" height="1080" playsinline controls>%sources</video>
+<video video-id="jNQXAC9IVRw" class="afterglow" poster="path/to/image.jpg" width="1920" height="1080" playsinline controls></video>
+<video video-id="LeAltgu_pbM" class="afterglow" poster="path/to/image.jpg" width="1920" height="1080" playsinline controls></video>
 </html>
