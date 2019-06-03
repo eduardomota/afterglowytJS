@@ -47,3 +47,7 @@ A. Yes, sources are obtained sequentially from the configured proxy.
 Q. Can i restrict access to this API?
 
 A. You can and should restrict allowed video IDs, IPs and domain referrers via config file. Other restrictions can be applied via custom code or application configurations.
+
+## License
+
+Distributed under MIT License. See `license.md` for more information.
