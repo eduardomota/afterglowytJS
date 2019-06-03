@@ -40,7 +40,7 @@ Q. Can i use this if i use Cloudflare?
 
 A. Yes this is just a simple proxy, video will be streamed directly from third-party servers.
 
-Q. Does this work with multiple <video> tags inside the same page?
+Q. Does this work with multiple `<video>` tags inside the same page?
 
 A. Yes, sources are obtained sequentially from the configured proxy.
 
