@@ -10,7 +10,7 @@ Obtain "raw" links to video resources with this yt integration, get sources for 
   3. If you're using Apache configure both `.htaccess` and `video.js` to the appropriate values for requests to be valid.
 4. Add afterglow player js and `video.js` to your HTML page preferrably before closing `</head>` tag.
    1. Edit configuration object inside `video.js` file as needed to point to the right proxy location.
-   Example:
+   2. Example:
    ```html
    <head>
      <script src="https://cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script>
@@ -24,7 +24,7 @@ Obtain "raw" links to video resources with this yt integration, get sources for 
    4. `width="1920" height="1080"`, (OPTIONAL) replace width and height values with appropriate dimensions as necessary
    5. `playsinline`, (OPTIONAL) prevents going full screen when played
    6. `controls`, (OPTIONAL) shows video controls
-   Example:
+   7. Example:
    ```html
    <video video-id="VIDEOID" class="afterglow" poster="PATH/TO/IMAGE.JPG" width="1920" height="1080" playsinline controls></video>
    ```
