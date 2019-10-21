@@ -99,17 +99,21 @@ This integration comes in two flavors:
 
 ## Mini QA
 
+Q. Can i use this without afterglow player?
+
+​	A. Yes, just don't add `class="afterglow"` to your video tag. 
+
 Q. Can i use this if i use Cloudflare?
 
-A. Yes this is just a simple proxy, video will be streamed directly from third-party servers (googlevideo).
+​	A. Yes this is just a simple proxy, video will be streamed directly from third-party servers (googlevideo).
 
 Q. Does this work with multiple `<video>` tags inside the same page?
 
-A. Yes, sources are obtained asynchronously from the configured request mode.
+​	A. Yes, sources are obtained asynchronously as configured.
 
 Q. Can i restrict access to this API?
 
-A. You can and should restrict allowed video IDs, IPs and domain referrers via config file. Other restrictions can be applied via custom code or application configurations.
+​	A. You can and should restrict allowed video IDs, IPs and domain referrers via config file. Other restrictions can be applied via custom code or application configurations.
 
 ## License
 
