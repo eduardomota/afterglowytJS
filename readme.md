@@ -89,7 +89,7 @@ This integration comes in two flavors:
 
 ## What does what
 
-`video.php` - Requests fresh raw sources `<source src="..." type="...">` for your video tag, this only uses a single GET parameter `code` that corresponds to the yt video id, 
+`video.php` - Requests fresh raw sources `<source src="..." type="...">` for your video tag, this only uses a single GET parameter `code` that corresponds to the yt video id.
 
 `vconfig.php` - Proxy configuration where you are able set which videos are allowed to request for in the `$videos` array.
 
