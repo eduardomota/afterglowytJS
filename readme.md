@@ -15,9 +15,9 @@ This integration comes in two flavors:
 
 #### Remote proxy (CORS)
 
-	- Source requests are sent through a google proxy and intermediates the request for raw sources.
-	- Includes client JS requester: `video.js`.
-	- Executes on the client only.
+- Source requests are sent through a google proxy and intermediates the request for raw sources.
+- Includes client JS requester: `video.js`.
+- Executes on the client only.
 
 ## Quick Start (Proxy)
 
