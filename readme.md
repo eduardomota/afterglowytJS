@@ -97,7 +97,7 @@ This integration comes in two flavors:
 
 `video.js` - Allows the browsers to request and apply `video.php` freshly obtained sources onto afterglow video tags.
 
-## Mini QA
+## Brief Q&A
 
 Q. Can i use this without afterglow player?
 
