@@ -1,4 +1,4 @@
-# afterglow-yt
+# afterglowytJS
 A transparent youtube raw source integration for afterglow HTML5 video player, this integration will help you integrate youtube sources with afterglow seamlessly. This integration request sources asynchronously as soon as the DOM is loaded.
 
 You can also use this with a plain HTML5 video player as it only changes video sources. Check `example.html` for a practical preview.
