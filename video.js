@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     parseMeta
       Parse metadata from request reply
     parameters
-      data (string) - data to parse meta from
+      data (string) - Data to parse meta from
    */
   function parseMeta(data) {
     var parsed = parseStr(data),
